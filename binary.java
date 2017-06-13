@@ -1,33 +1,34 @@
 import java.util.Arrays;
 import java.util.Scanner;
 public class binary{
+  int i;
 public static void main(String args[]) {
 Scanner in=new Scanner(System.in);
 int n=in.nextInt();
-int[] a=new int[n];
-int[] b=new int[n];
-for(int i=0;i<n;i++)
+int arr[]=new int[n];
+int brr[]=new int[n];
+for(i=0;i<n;i++)
 {
-a[i]=in.nextInt();
-String s=Integer.toBinaryString(a[i]);
+arr[i]=in.nextInt();
+String s=Integer.toBinaryString(arr[i]);
 //System.out.println(s);
 //System.out.println(s.length());
 //System.out.println(s.replaceAll("1","").length());
-b[i]=s.length()-s.replaceAll("1","").length();
+brr[i]=s.length()-s.replaceAll("1","").length();
 //System.out.println(b[i]);
 //while()
 }
-int[] c=new int[n];
-System.arraycopy(b,0,c,0,b.length);
-Arrays.sort(b);
-for(int j=n-1;j>=0;j--)
+int crr[]=new int[n];
+System.arraycopy(brr,0,crr,0,b.length);
+Arrays.sort(brr);
+for(i=n-1;i>=0;i--)
 {
-for(int k=0;k<n;k++)
+for(int j=0;j<n;j++)
 {
-if(b[j]==c[k] && a[k]!=0)
+if(brr[i]==crr[j] && arr[j]!=0)
 {
-System.out.print(a[k]+" ");
-a[k]=0;
+System.out.print(a[j]+" ");
+a[j]=0;
 break;
 }
 }
