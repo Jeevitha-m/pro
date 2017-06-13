@@ -1,23 +1,38 @@
-import java.io.*;
-import java.util.*;
-class binary
-{
-public static void main(String args[])
-{
-Scanner scan=new Scanner(System.in);
-int n=scan.nextInt();
-int arr[]=new int[n];
-String ba[]=new String[n];
+import java.util.Arrays;
+import java.util.Scanner;
+public class binary{
+public static void main(String args[]) {
+Scanner in=new Scanner(System.in);
+int n=in.nextInt();
+int[] a=new int[n];
+int[] b=new int[n];
 for(int i=0;i<n;i++)
 {
-arr[i]=scan.nextInt();
+a[i]=in.nextInt();
+String s=Integer.toBinaryString(a[i]);
+//System.out.println(s);
+//System.out.println(s.length());
+//System.out.println(s.replaceAll("1","").length());
+b[i]=s.length()-s.replaceAll("1","").length();
+//System.out.println(b[i]);
+//while()
 }
-for(i=0;i<n;i++)
+int[] c=new int[n];
+System.arraycopy(b,0,c,0,b.length);
+Arrays.sort(b);
+for(int j=n-1;j>=0;j--)
 {
-ba[i]=Integer.toBinaryString(arr[i]);
-while(ba[i]>0)
+for(int k=0;k<n;k++)
 {
-int c=ba[i]%10;
-sum=sum+c;
-ba[i]=ba[i]/10;
+if(b[j]==c[k] && a[k]!=0)
+{
+System.out.print(a[k]+" ");
+a[k]=0;
+break;
 }
+}
+}
+}
+}
+
+
