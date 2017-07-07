@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-class smallnum
+class smalldig
 {
     public static void main(String args[])
     {
